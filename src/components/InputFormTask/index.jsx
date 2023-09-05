@@ -29,7 +29,7 @@ const InnputFormTask = (props) => {
           onChange={handleChangeTaskName}
           style={{ marginRight: 20 }}
         />
-        <button type="submit" style={{ border: "none", background: "#fff" }}>
+        <button type="submit" style={{ border: "none", background: "#f8f9fa" }}>
           <PlusCircleOutlined style={{ fontSize: 30, cursor: "pointer" }} />
         </button>
       </div>
