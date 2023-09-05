@@ -65,6 +65,7 @@ function App() {
       _page: pagination.currentPage,
       _limit: pagination.limitPerPage,
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pagination.currentPage]);
 
   const handleAddTask = async (taskName) => {
@@ -74,9 +75,6 @@ function App() {
       createAt: new Date().getTime(),
     };
 
-    // if (taskName === "") {
-    //   _task.taskName = "No Name";
-    // }
     await TaskApi.createTask(_task);
     fetchAllTasks({
       _page: pagination.currentPage,
@@ -86,7 +84,7 @@ function App() {
 
   const renderTaskList = (tasks) => {
     if (!tasks.length) {
-      return <div>Please input your task...</div>;
+      return <div className="text-center">Please input your task...</div>;
     }
     return tasks.map((task) => (
       <Task
@@ -128,10 +126,10 @@ function App() {
 
   return (
     <div className="App">
-      <div className="container mt-5">
+      <div className="container mt-5" style={{ width: "50%" }}>
         <div className="row">
           <div className="col-md-12">
-            <div className="card border border-3 border-primary rounded-3">
+            <div className="card border border-5 border-primary rounded-3 bg-warning">
               <div className="card-header p-4 border-3 border-primary">
                 <InnputFormTask handleAddTask={handleAddTask} />
               </div>
@@ -140,7 +138,12 @@ function App() {
               </div>
               <div className="card-footer border-3 border-primary p-4">
                 <Pagination
-                  style={{ textAlign: "center" }}
+                  style={{
+                    padding: 20,
+                    display: "flex",
+                    justifyContent: "center",
+                    WebkitTextFillColor: "blue",
+                  }}
                   defaultCurrent={tasks}
                   current={pagination.currentPage}
                   onChange={(page) => handleChangePage(page)}

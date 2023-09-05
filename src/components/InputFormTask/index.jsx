@@ -19,7 +19,7 @@ const InnputFormTask = (props) => {
 
   return (
     <form onSubmit={handleSubmitForm}>
-      <h1 className="h1 mt-3" style={{ textAlign: "center", color: "blue" }}>
+      <h1 className=" h1 mt-3 fw-bold" style={{ textAlign: "center" }}>
         TO DO LIST APPLICATION
       </h1>
       <div className="d-flex my-4">
@@ -27,11 +27,10 @@ const InnputFormTask = (props) => {
           placeholder="Add new task in here"
           value={inputTaskName}
           onChange={handleChangeTaskName}
+          style={{ marginRight: 20 }}
         />
-        <button type="submit" style={{ border: "none", background: "#f8f9fa" }}>
-          <PlusCircleOutlined
-            style={{ fontSize: 30, marginLeft: 20, cursor: "pointer" }}
-          />
+        <button type="submit" style={{ border: "none" }} className="bg-warning">
+          <PlusCircleOutlined style={{ fontSize: 30, cursor: "pointer" }} />
         </button>
       </div>
     </form>
