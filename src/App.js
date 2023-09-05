@@ -122,14 +122,15 @@ function App() {
     });
   };
 
-  console.log(process.env.REACT_APP_BE_URL, "ullll");
-
   return (
     <div className="App">
       <div className="container mt-5" style={{ width: "50%" }}>
         <div className="row">
           <div className="col-md-12">
-            <div className="card border border-5 border-primary rounded-3 bg-warning">
+            <div
+              className="card border border-5 border-primary"
+              style={{ borderRadius: 15 }}
+            >
               <div className="card-header p-4 border-3 border-primary">
                 <InnputFormTask handleAddTask={handleAddTask} />
               </div>
